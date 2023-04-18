@@ -1,3 +1,8 @@
+import numpy as np
+import matplotlib.pyplot as plt
+import math
+import cv2
+
 # classical image processing from scratch
 
 # box_filter
