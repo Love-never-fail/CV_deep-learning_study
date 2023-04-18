@@ -1,0 +1,29 @@
+# image processing from scratch
+
+# box_filter
+def box_kernel(k, m):
+  b_kernel = np.ones([k,k]) * 1/m
+
+  return b_kernel
+
+# gaussian_filter
+def gaussian_kernel1(k, std):
+  g_kernel = np.zeros([k,k])
+  k_h = k //2
+
+  for y in range(k):
+    for x in range(k):
+      ky = y - k_h
+      kx = x - k_h
+      g_kernel[y,x] = np.exp(-(ky**2 + kx**2)/2*std**2)
+  g_kernel /= np.sum(g_kernel)
+
+  return g_kernel
+  
+def gaussian_kernel2(k, std):
+  k_h = k //2
+  [kx, ky] = np.ogrid[-k_h:k_h+1, -k_h:k_h+1]
+  g_kernel = np.exp(-(kx**2+ky**2)/2*std**2)
+  g_kernel /= np.sum(g_kernel)
+
+  return g_kernel  
