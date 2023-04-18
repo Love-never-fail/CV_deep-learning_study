@@ -1,5 +1,7 @@
+import torch
+import torch.nn as nn
 
-
+# GoogLeNEt 구현
 
 class GoogLeNet(nn.Module):
   def __init__(self, in_channels=3, num_classes=1000):
