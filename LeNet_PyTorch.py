@@ -1,3 +1,6 @@
+import torch
+import torch.nn as nn
+
 # LeNet 구현
 
 class LeNet(nn.Module):
